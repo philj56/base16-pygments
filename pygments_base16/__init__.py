@@ -6,6 +6,6 @@ from importlib import import_module
 
 for filename in glob(path.join(path.dirname(__file__), 'base16-*.py')):
     module_name = path.splitext(path.basename(filename))[0]
-    class_name = '{}Style'.format(capwords(module_name, '-').replace('-', ''))
+    class_name = '{}Style'.format(capwords(module_name, '-').replace('-', '')).replace('16', 'Sixteen')
     module = import_module('.{}'.format(module_name), __name__)
     globals()[class_name] = getattr(module, class_name)

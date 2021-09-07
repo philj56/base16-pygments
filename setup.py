@@ -12,6 +12,7 @@ with open(path.join(base_dir, 'README.rst'), encoding='utf-8') as f:
 styles = []
 for filename in glob(path.join(base_dir, 'pygments_base16', 'base16-*.py')):
     style = path.splitext(path.basename(filename))[0]
+    style = style.replace('16', '-sixteen')
     class_name = '{}Style'.format(capwords(style, '-').replace('-', ''))
     styles.append('{}=pygments_base16:{}'.format(style, class_name))
 

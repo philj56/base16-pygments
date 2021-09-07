@@ -4,11 +4,11 @@ from pygments.token import (
 )
 
 
-class Base16Style(Style):
-    base00 = '#3f3f3f'
+class BaseSixteenStyle(Style):
+    base00 = '#383838'
     base01 = '#404040'
     base02 = '#606060'
-    base03 = '#4f4f4f'
+    base03 = '#6f6f6f'
     base04 = '#808080'
     base05 = '#dcdccc'
     base06 = '#c0c0c0'
@@ -31,7 +31,7 @@ class Base16Style(Style):
         Text: base05,
         Error: base08,  # .err
 
-        Comment: base03,  # .c
+        Comment: f'italic {base03}',  # .c
         Comment.Preproc: base0f,  # .cp
         Comment.PreprocFile: base0b,  # .cpf
 
@@ -65,9 +65,9 @@ class Base16Style(Style):
 
 
 from string import capwords  # noqa: E402
-Base16Style.__name__ = 'Base16{}Style'.format(
+BaseSixteenStyle.__name__ = 'BaseSixteen{}Style'.format(
     capwords('zenburn', '-').replace('-', '')
 )
-globals()[Base16Style.__name__] = globals()['Base16Style']
-del globals()['Base16Style']
+globals()[BaseSixteenStyle.__name__] = globals()['BaseSixteenStyle']
+del globals()['BaseSixteenStyle']
 del capwords

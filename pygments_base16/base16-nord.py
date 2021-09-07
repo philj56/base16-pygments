@@ -4,7 +4,7 @@ from pygments.token import (
 )
 
 
-class Base16Style(Style):
+class BaseSixteenStyle(Style):
     base00 = '#2E3440'
     base01 = '#3B4252'
     base02 = '#434C5E'
@@ -13,14 +13,14 @@ class Base16Style(Style):
     base05 = '#E5E9F0'
     base06 = '#ECEFF4'
     base07 = '#8FBCBB'
-    base08 = '#88C0D0'
-    base09 = '#81A1C1'
-    base0a = '#5E81AC'
-    base0b = '#BF616A'
-    base0c = '#D08770'
-    base0d = '#EBCB8B'
-    base0e = '#A3BE8C'
-    base0f = '#B48EAD'
+    base08 = '#BF616A'
+    base09 = '#D08770'
+    base0a = '#EBCB8B'
+    base0b = '#A3BE8C'
+    base0c = '#88C0D0'
+    base0d = '#81A1C1'
+    base0e = '#B48EAD'
+    base0f = '#5E81AC'
 
     default_style = ''
 
@@ -31,7 +31,7 @@ class Base16Style(Style):
         Text: base05,
         Error: base08,  # .err
 
-        Comment: base03,  # .c
+        Comment: f'italic {base03}',  # .c
         Comment.Preproc: base0f,  # .cp
         Comment.PreprocFile: base0b,  # .cpf
 
@@ -65,9 +65,9 @@ class Base16Style(Style):
 
 
 from string import capwords  # noqa: E402
-Base16Style.__name__ = 'Base16{}Style'.format(
+BaseSixteenStyle.__name__ = 'BaseSixteen{}Style'.format(
     capwords('nord', '-').replace('-', '')
 )
-globals()[Base16Style.__name__] = globals()['Base16Style']
-del globals()['Base16Style']
+globals()[BaseSixteenStyle.__name__] = globals()['BaseSixteenStyle']
+del globals()['BaseSixteenStyle']
 del capwords
